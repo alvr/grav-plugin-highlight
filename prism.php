@@ -5,7 +5,7 @@ use \Grav\Common\Plugin;
 use \Grav\Common\Grav;
 use \Grav\Common\Page\Page;
 
-class HighlightPlugin extends Plugin
+class PrismPlugin extends Plugin
 {
     /**
      * @return array
@@ -27,14 +27,14 @@ class HighlightPlugin extends Plugin
             return;
         }
 
-        $defaults = (array) $this->config->get('plugins.highlight');
+        $defaults = (array) $this->config->get('plugins.prism');
 
         /** @var Page $page */
         $page = $this->grav['page'];
-        if (isset($page->header()->highlight)) {
-            $this->config->set('plugins.highlight', array_merge($defaults, $page->header()->highlight));
+        if (isset($page->header()->prism)) {
+            $this->config->set('plugins.prism', array_merge($defaults, $page->header()->prism));
         }
-        if ($this->config->get('plugins.highlight.enabled')) {
+        if ($this->config->get('plugins.prism.enabled')) {
             $this->enable([
                 'onTwigSiteVariables' => ['onTwigSiteVariables', 0]
             ]);
@@ -46,14 +46,8 @@ class HighlightPlugin extends Plugin
      */
     public function onTwigSiteVariables()
     {
-        $init = "$(document).ready(function() {
-                    $('pre code').each(function(i, block) {
-                        hljs.highlightBlock(block);
-                    });
-                 });";
-        $theme = $this->config->get('plugins.highlight.theme') ?: 'default';
-        $this->grav['assets']->addCss('plugin://highlight/css/'.$theme.'.css');
-        $this->grav['assets']->addJs('plugin://highlight/js/highlight.pack.js');
-        $this->grav['assets']->addInlineJs($init);
+        $theme = $this->config->get('plugins.prism.theme') ?: 'default';
+        $this->grav['assets']->addCss('plugin://prism/css/'.$theme.'.css');
+        $this->grav['assets']->addJs('plugin://prism/js/prism.js');
     }
 }
