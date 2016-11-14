@@ -1,7 +1,5 @@
 # Grav Prism Highlighter Plugin
 
-![Highlight](assets/readme_1.png)
-
 `Prism Highlighter` is a [Grav](http://github.com/getgrav/grav) plugin that adds simple and powerful code highlighting functionality utilizing the [Prism.js](http://prismjs.com/) syntax highlighter.
 
 # Installation
@@ -25,29 +23,28 @@ In your markdown, you can create a block of code, and assign the language to it.
 
 ```
 ```java
-import java.util.HashSet;
+  import java.util.HashSet;
 
-public class Program {
-    public static void main(String[] args) {
+  public class Program {
+      public static void main(String[] args) {
 
-	// Create HashSet.
-	HashSet<String> hash = new HashSet<>();
-	hash.add("castle");
-	hash.add("bridge");
-	hash.add("castle"); // Duplicate element.
-	hash.add("moat");
+    // Create HashSet.
+    HashSet<String> hash = new HashSet<>();
+    hash.add("castle");
+    hash.add("bridge");
+    hash.add("castle"); // Duplicate element.
+    hash.add("moat");
 
-	// Display size.
-	System.out.println(hash.size());
+    // Display size.
+    System.out.println(hash.size());
 
-	// See if these three elements exist.
-	System.out.println(hash.contains("castle"));
-	System.out.println(hash.contains("bridge"));
-	System.out.println(hash.contains("moat"));
-    }
-}
-```
-```
+    // See if these three elements exist.
+    System.out.println(hash.contains("castle"));
+    System.out.println(hash.contains("bridge"));
+    System.out.println(hash.contains("moat"));
+      }
+  }```
+  ```
 
 You can also override the default theme for a page.
 
