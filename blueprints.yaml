@@ -1,5 +1,5 @@
 name: Prism Highlighter
-version: 1.0.0
+version: 2.0.0
 description: "This plugin provides code highlighting functionality via the [Prism.js](http://prismjs.com/) syntax highlighter. Based on [Grav Highlight Plugin](https://github.com/getgrav/grav-plugin-highlight)."
 icon: code
 author:
@@ -38,3 +38,15 @@ form:
         okaidia: Okaidia
         solarized-light: Solarized Light
         twilight: Twilight
+
+    linenumbers:
+      type: toggle
+      label: Line Numbers
+      highlight: 1
+      default: 0
+      options:
+        1: PLUGIN_ADMIN.ENABLED
+        0: PLUGIN_ADMIN.DISABLED
+      validate:
+        type: bool
+
