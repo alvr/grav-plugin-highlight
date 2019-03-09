@@ -71,3 +71,6 @@ You can enbale the following plugins:
 
 * [Line Numbers](http://prismjs.com/plugins/line-numbers/) => Set option `linenumbers` to `true`
 
+If you have the following error in console, disable the option "Javascript Minify" in Grav System Configuration.
+
+>  Uncaught SyntaxError: Invalid regular expression: missing /
